@@ -337,12 +337,12 @@
 .brands-heading {
   font-family: 'Inter', sans-serif;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 18px;
   font-style: italic;
   letter-spacing: -0.5px;
-  line-height: 30px;
+  line-height: 24px;
   color: #121212;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .brands-subtitle {

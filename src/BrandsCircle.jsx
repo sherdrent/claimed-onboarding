@@ -63,7 +63,7 @@ export default function BrandsCircle({ heading, subtitle, onGetStarted }) {
       height: viewH,
       overflow: 'visible',
     }}>
-      {/* Dashed circles */}
+      {/* Outer dashed ring */}
       <div style={{
         position: 'absolute',
         top: (FIGMA_CIRCLE_CENTER_Y - 274.5) * SCALE,
@@ -72,8 +72,11 @@ export default function BrandsCircle({ heading, subtitle, onGetStarted }) {
         width: 549 * SCALE,
         height: 549 * SCALE,
         borderRadius: '50%',
-        border: '1px dashed rgba(209,213,219,0.5)',
+        border: '1.5px dashed #D1D5DB',
+        zIndex: 1,
       }} />
+
+      {/* Inner dashed ring */}
       <div style={{
         position: 'absolute',
         top: (FIGMA_CIRCLE_CENTER_Y - 185.7) * SCALE,
@@ -82,8 +85,32 @@ export default function BrandsCircle({ heading, subtitle, onGetStarted }) {
         width: 371 * SCALE,
         height: 371 * SCALE,
         borderRadius: '50%',
-        border: '1px dashed rgba(209,213,219,0.3)',
+        border: '1.5px dashed #D1D5DB',
+        zIndex: 1,
       }} />
+
+      {/* Glow + text centered inside inner ring */}
+      <div style={{
+        position: 'absolute',
+        top: (FIGMA_CIRCLE_CENTER_Y - 185.7) * SCALE,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: 371 * SCALE,
+        height: 371 * SCALE,
+        borderRadius: '50%',
+        background: 'radial-gradient(ellipse at center, rgba(144,213,255,0.18) 0%, rgba(255,255,255,0) 70%)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        padding: '0 16px',
+        zIndex: 5,
+        pointerEvents: 'none',
+      }}>
+        {heading && <h2 className="brands-heading" style={{ margin: 0, marginBottom: 8 }}>{heading}</h2>}
+        {subtitle && <p className="brands-subtitle" style={{ margin: 0 }}>{subtitle}</p>}
+      </div>
 
       {/* Brand cards */}
       {BRAND_CARDS.map((card, i) => {
@@ -101,30 +128,15 @@ export default function BrandsCircle({ heading, subtitle, onGetStarted }) {
               top: card.y * SCALE,
               width: card.w * SCALE,
               height: card.h * SCALE,
-              borderRadius: 6,
+              borderRadius: 8,
               transform: `rotate(${card.rot}deg)`,
               objectFit: 'cover',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.15)',
+              zIndex: 2,
             }}
           />
         )
       })}
-
-      {/* Heading overlaid in center of circle */}
-      {heading && (
-        <div style={{
-          position: 'absolute',
-          top: (FIGMA_CIRCLE_CENTER_Y - 40) * SCALE,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: 160,
-          textAlign: 'center',
-          pointerEvents: 'none',
-          zIndex: 10,
-        }}>
-          <h2 className="brands-heading" style={{ margin: 0 }}>{heading}</h2>
-        </div>
-      )}
     </div>
   )
 }
