@@ -274,11 +274,12 @@ function App() {
   // Loading screen
   if (step === 'loading') {
     return (
-      <div className="loading-screen">
+      <div className="results-screen">
         <img src={claimLogo} alt="Claim" className="claim-logo" style={{ position: 'absolute', top: 16, left: 16 }} />
-        <div className="loading-icon">🌐</div>
-        <h2 className="loading-heading">Calculating your estimated <span className="accent">payout</span></h2>
-        <p className="loading-subtitle">Running payout optimization</p>
+        <div className="results-emoji">💸</div>
+        <h2 className="results-heading">Based on your answers you missed out on...</h2>
+        <div className="results-amount">${missedAmount}</div>
+        <p className="results-subtitle">Calculating your exact payout...</p>
       </div>
     )
   }
