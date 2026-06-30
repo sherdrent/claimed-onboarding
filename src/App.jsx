@@ -313,11 +313,10 @@ function App() {
     return (
       <div className="brands-screen">
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-          <BrandsCircle />
-          <div style={{ textAlign: 'center', padding: '0 16px', marginTop: 16 }}>
-            <h2 className="brands-heading">Plenty of active claims are still open!</h2>
-            <p className="brands-subtitle">You still have time! Claimed will show you dozens of settlements available today.</p>
-          </div>
+          <BrandsCircle heading="Plenty of active claims are still open!" />
+          <p className="brands-subtitle" style={{ textAlign: 'center', padding: '0 32px', marginTop: -8 }}>
+            You still have time! Claimed will show you dozens of settlements available today.
+          </p>
         </div>
         <button className="btn-next" style={{ marginTop: 20 }} onClick={() => setStep('choose-claims')}>Get Started</button>
       </div>

@@ -51,7 +51,9 @@ const BRAND_CARDS = [
 const FIGMA_CENTER_X = 195
 const SCALE = 0.62
 
-export default function BrandsCircle() {
+const FIGMA_CIRCLE_CENTER_Y = 332
+
+export default function BrandsCircle({ heading, subtitle, onGetStarted }) {
   const viewH = 660 * SCALE
 
   return (
@@ -61,9 +63,10 @@ export default function BrandsCircle() {
       height: viewH,
       overflow: 'visible',
     }}>
+      {/* Dashed circles */}
       <div style={{
         position: 'absolute',
-        top: (332 - 274.5) * SCALE,
+        top: (FIGMA_CIRCLE_CENTER_Y - 274.5) * SCALE,
         left: '50%',
         transform: 'translateX(-50%)',
         width: 549 * SCALE,
@@ -73,7 +76,7 @@ export default function BrandsCircle() {
       }} />
       <div style={{
         position: 'absolute',
-        top: (332 - 185.7) * SCALE,
+        top: (FIGMA_CIRCLE_CENTER_Y - 185.7) * SCALE,
         left: '50%',
         transform: 'translateX(-50%)',
         width: 371 * SCALE,
@@ -82,6 +85,7 @@ export default function BrandsCircle() {
         border: '1px dashed rgba(209,213,219,0.3)',
       }} />
 
+      {/* Brand cards */}
       {BRAND_CARDS.map((card, i) => {
         const centerOffsetX = card.x + card.w / 2 - FIGMA_CENTER_X
         const leftPx = `calc(50% + ${centerOffsetX * SCALE}px - ${card.w * SCALE / 2}px)`
@@ -105,6 +109,22 @@ export default function BrandsCircle() {
           />
         )
       })}
+
+      {/* Heading overlaid in center of circle */}
+      {heading && (
+        <div style={{
+          position: 'absolute',
+          top: (FIGMA_CIRCLE_CENTER_Y - 40) * SCALE,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: 160,
+          textAlign: 'center',
+          pointerEvents: 'none',
+          zIndex: 10,
+        }}>
+          <h2 className="brands-heading" style={{ margin: 0 }}>{heading}</h2>
+        </div>
+      )}
     </div>
   )
 }
