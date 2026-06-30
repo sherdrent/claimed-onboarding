@@ -1,0 +1,726 @@
+.page {
+  min-height: 100vh;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Claim Logo */
+.claim-logo {
+  width: 60px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.claim-logo-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* Header with logo + counter */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.question-counter {
+  background: #f0f0f0;
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #121212;
+}
+
+/* Intro screens */
+.intro-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.728px;
+  line-height: 28.6px;
+  color: #121212;
+  margin-bottom: 12px;
+}
+
+.intro-heading .accent {
+  color: #90D5FF;
+}
+
+.intro-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.24px;
+  line-height: 18px;
+  color: #98a2b3;
+  margin-bottom: 20px;
+}
+
+.intro-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: auto;
+  flex: 1;
+  object-fit: contain;
+  max-height: 480px;
+}
+
+/* Next / primary button */
+.btn-next {
+  width: 100%;
+  height: 60px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.btn-next:hover {
+  background: #1a1a1a;
+}
+
+.btn-next.blue {
+  background: #90D5FF;
+}
+
+.btn-next.blue:hover {
+  background: #003fcc;
+}
+
+.btn-next.red {
+  background: #ef4444;
+}
+
+/* Question card screen */
+.question-card-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-card {
+  background: #fff;
+  border: 3px solid #90D5FF;
+  border-radius: 24px;
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.question-card-header {
+  background: #90D5FF;
+  margin: -16px -16px 0 -16px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px 20px 0 0;
+}
+
+.question-card-header .claim-logo {
+  filter: brightness(10);
+}
+
+.brand-icon-small {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+  position: absolute;
+  top: 50px;
+  left: 16px;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.question-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  line-height: 30px;
+  color: #121212;
+  margin-top: 50px;
+  margin-bottom: 16px;
+}
+
+.question-text .accent {
+  color: #90D5FF;
+}
+
+.brand-logo-large {
+  width: 196px;
+  height: 196px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border: 1px solid #d1d5db;
+  align-self: center;
+  margin: auto 0;
+}
+
+.answer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.btn-answer {
+  width: 100%;
+  height: 49px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #121212;
+  cursor: pointer;
+}
+
+.btn-answer:hover {
+  background: #f5f5f5;
+}
+
+.btn-answer.selected {
+  background: #90D5FF;
+  color: #fff;
+  border-color: #90D5FF;
+}
+
+/* Loading screen */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+  text-align: center;
+}
+
+.loading-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 24px;
+  background: #f0f4ff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  line-height: 30px;
+  color: #121212;
+  margin-bottom: 12px;
+}
+
+.loading-heading .accent {
+  color: #90D5FF;
+}
+
+.loading-subtitle {
+  font-size: 14px;
+  color: #98a2b3;
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Results screens */
+.results-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+  text-align: center;
+}
+
+.results-emoji {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.results-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  font-style: italic;
+  letter-spacing: -0.5px;
+  line-height: 30px;
+  color: #121212;
+  margin-bottom: 8px;
+}
+
+.results-amount {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  color: #121212;
+  margin-bottom: 12px;
+}
+
+.results-amount .accent {
+  color: #90D5FF;
+}
+
+.results-subtitle {
+  font-size: 14px;
+  color: #98a2b3;
+  line-height: 18px;
+  max-width: 300px;
+}
+
+/* Brands circle screen */
+.brands-screen {
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.brands-glow {
+  width: 100%;
+  margin: 0 -16px;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.brands-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.brands-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  font-style: italic;
+  letter-spacing: -0.5px;
+  line-height: 30px;
+  color: #121212;
+  margin-bottom: 8px;
+}
+
+.brands-subtitle {
+  font-size: 14px;
+  color: #98a2b3;
+  line-height: 18px;
+}
+
+/* Claims selection */
+.claims-list-screen {
+  min-height: 100vh;
+  padding: 16px;
+  padding-bottom: 100px;
+}
+
+.claims-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.claims-subtitle-text {
+  font-size: 14px;
+  color: #98a2b3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.claim-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.claim-card.selected {
+  border-color: #90D5FF;
+  background: #f0f4ff;
+}
+
+.claim-card-icon {
+  width: 92px;
+  height: 92px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.claim-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.claim-card-name {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.claim-card-detail {
+  font-size: 13px;
+  color: #667085;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.claim-card-payout {
+  font-size: 13px;
+  color: #90D5FF;
+  font-weight: 500;
+}
+
+.claim-card-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.claim-card-checkbox.checked {
+  background: #90D5FF;
+  border-color: #90D5FF;
+  color: #fff;
+}
+
+/* Floating bottom bar */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  background: #fff;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+  padding: 12px 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.bottom-bar-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-bar-count {
+  font-size: 14px;
+  color: #667085;
+}
+
+.bottom-bar-amount {
+  font-size: 24px;
+  font-weight: 800;
+  color: #121212;
+}
+
+.bottom-bar .btn-next {
+  width: 120px;
+  height: 48px;
+  margin-top: 0;
+}
+
+/* Form screen */
+.form-screen {
+  min-height: 100vh;
+  padding: 16px;
+  padding-bottom: 40px;
+}
+
+.form-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: #98a2b3;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+
+.selected-claims-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.chip {
+  background: #f0f0f0;
+  border-radius: 100px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chip img {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.form-section-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-label .required {
+  color: #ef4444;
+}
+
+.form-input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #90D5FF;
+}
+
+.form-select {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  appearance: auto;
+}
+
+/* Claim form screen */
+.claim-form-screen {
+  min-height: 100vh;
+  padding: 16px;
+  padding-bottom: 100px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #90D5FF;
+  border-radius: 100px;
+  transition: width 0.3s;
+}
+
+.claim-form-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.claim-form-subtitle {
+  font-size: 14px;
+  color: #98a2b3;
+  margin-bottom: 24px;
+}
+
+.claim-question {
+  margin-bottom: 20px;
+}
+
+.claim-question-text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.claim-question-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-yes-no {
+  flex: 1;
+  height: 44px;
+  border: 1px solid #d1d5db;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  background: #fff;
+  color: #90D5FF;
+  transition: all 0.2s;
+}
+
+.btn-yes-no.selected-yes {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.btn-yes-no.selected-no {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.claim-form-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  background: #fff;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+  padding: 12px 16px 24px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.btn-skip {
+  flex: 1;
+  height: 48px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  color: #121212;
+}
+
+.btn-complete {
+  flex: 1;
+  height: 48px;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-complete:hover {
+  background: #dc2626;
+}
+
+/* Thank you */
+.thankyou-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+  text-align: center;
+}
+
+.thankyou-emoji {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.thankyou-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: #121212;
+  margin-bottom: 12px;
+}
+
+.thankyou-text {
+  font-size: 14px;
+  color: #98a2b3;
+  line-height: 20px;
+  max-width: 300px;
+}

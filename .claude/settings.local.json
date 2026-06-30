@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude plugin *)",
+      "Bash(find ~/.claude -name \"*.json\" -maxdepth 2 2>/dev/null | head -20)",
+      "Bash(claude mcp *)",
+      "Bash(curl -s -o /Users/sherelydrent/nutribook-dash-v2/dashboard/src/assets/settlement-cards.png \"http://localhost:3845/assets/e3822049ca5226d3b349e7e93bed87cef3b36190.png\")",
+      "Bash(curl -s -o /Users/sherelydrent/nutribook-dash-v2/dashboard/src/assets/logo.svg \"http://localhost:3845/assets/aa0dd071c6791f91cc2c142266d25e66139f4270.svg\")",
+      "Bash(npx vite *)",
+      "Bash(mkdir -p /Users/sherelydrent/nutribook-dash-v2/dashboard/.claude)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__figma-desktop__get_design_context",
+      "mcp__figma-desktop__get_screenshot",
+      "Bash(curl -s -o unclaimed-folder-new.png \"http://localhost:3845/assets/6e7784e09032f90a4558f02b2dc137c2ba290db9.png\")",
+      "Bash(curl -s -o claim-tracker-new.png \"http://localhost:3845/assets/7c31a1bb964e41ee854f02086e9fa97903c38305.png\")",
+      "Bash(curl -s -o phone-notifications-new.png \"http://localhost:3845/assets/64d745824054ff106d22e9d214b0e347a6a79052.png\")",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
